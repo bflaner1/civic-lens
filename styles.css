@@ -1,9 +1,56 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Bridget Flanery */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* ///ADD/// CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 
 /* Root Variables */
@@ -24,10 +71,14 @@ body.light-mode {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
 }
-body.dark-mode {
-  background-color: var(--truth-text);
-  color: var(--watchdog-white);
+
+@media (prefers-color-scheme: dark) {
+  body.dark-mode {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
 }
+
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -38,11 +89,85 @@ body.dark-mode {
   cursor: pointer;
 }
 
-/* ///ADD/// Skip Link Styles */
+.skip-link {
+  left: 50%;
+  position: absolute;
+  transform: translateY(-3em);
+  transition: transform 0.3s;
+}
 
-/* ///ADD/// Navigation Styles */
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+nav {
+  background-color: var(--news-flash);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: cetner;
+  align-items: center;
+  padding: 0.5rem;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  font-family: var(--font-body);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu-button {
+  color: var(--watchdog-white);
+  width: 100%;
+  text-align: center;
+}
+
+#menu-toggle:checked ~ .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  display: none;
+}
+
+.menu a {
+  &:link,
+  &:visited {
+    color: var(--watchdog-white);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
 
 /* ///ADD/// Global Layout Styles */
+header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 0.75rem 0.5rem;
+}
+
+h1,
+h1 + p {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+h1 + p {
+  padding: 0.25rem 0.5rem 0.75rem;
+}
 
 /* ///ADD/// Global Text Styles */
 
